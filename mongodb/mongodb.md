@@ -56,7 +56,7 @@
   mv  mongodb-linux-x86_64-4.0.6/ /usr/local/mongodb # 将解压包移动到指定到目录 
   ```
 - MongoDB的数据存储在data目录的db目录下，但是这个目录在安装过程不会自动创建，所以你需要手动创建data目录，并在data目录中创建db目录
-  ````
+  ```
   cd /data
   mkdir db
   ```
