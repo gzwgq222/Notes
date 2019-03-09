@@ -53,8 +53,14 @@
   ```
   curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-4.0.6.tgz # 下载
   tar -zxvf mongodb-linux-x86_64-4.0.6.tgz # 解压
-  mv  mongodb-linux-x86_64-3.0.6/ /usr/local/mongodb # 将解压包移动到指定到目录 
+  mv  mongodb-linux-x86_64-4.0.6/ /usr/local/mongodb # 将解压包移动到指定到目录 
   ```
+- MongoDB的数据存储在data目录的db目录下，但是这个目录在安装过程不会自动创建，所以你需要手动创建data目录，并在data目录中创建db目录
+  ````
+  cd /data
+  mkdir db
+  ```
+
  - `将mongodb添加到全局变量中`
     最开始参考[菜鸟教程](http://www.runoob.com/mongodb/mongodb-linux-install.html)的设置方式，
     ```
@@ -69,7 +75,7 @@
 
     - PATH设定方法(临时)
 
-      export PATH=$PATH:/usr/local/scala/bin
+      export PATH=$PATH:/usr/local/mongodb/bin
     - PATH设定方法(永久)
 
       单个用户
