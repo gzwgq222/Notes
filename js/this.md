@@ -59,9 +59,9 @@
   fn() // innerFunction()是作为一个函数执行的，没有挂载在任何对象上，所以this指向window
   ```
 ### 改变this指向
-  - bind bind方法创建一个新的函数，当被调用时，将其this关键字设置为设置的值。多用在事件绑定中，如react事件中绑定this。
-  - call fn.call(obj, args)
-  - apply fn.apply(obj, [args])
+  - bind： bind方法创建一个新的函数，当被调用时，将其this关键字设置为配置的值。多用在事件绑定中，如react事件中绑定this。
+  - call： fn.call(obj, args)
+  - apply： fn.apply(obj, [args])
   - 箭头函数
   - const that = this
   - 构造函数
