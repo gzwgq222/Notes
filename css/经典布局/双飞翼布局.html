@@ -5,47 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      min-width: 500px;
+    }
+    .main {
+      width: 100%;
+      float: left;
+    }
+    .main::after {
+      display: block;
+      content: '';
+      font-size: 0;
+      height: 0;
+      clear: both;
+      zoom: 1;
+    }
+    .main-div {
+      height: 100vh;
+      background: paleturquoise;
+      padding: 0 200px;
+    }
+    .left {
+      height: 100vh;
+      width: 200px;
+      float: left;
+      margin-left: -100%;
+      background: palevioletred;
+    }
+    .right {
+      height: 100vh;
+      float: left;
+      margin-left: -200px;
+      width: 200px;
+      background: gray;
+    }
+  </style>
 </head>
-<style>
-  * {
-    padding: 0;
-    margin: 0;
-  }
-  body {
-    min-width: 500px;
-  }
-  .main {
-    width: 100%;
-    float: left;
-  }
-  .main::after {
-    display: block;
-    content: '';
-    font-size: 0;
-    height: 0;
-    clear: both;
-    zoom: 1;
-  }
-  .main-div {
-    height: 100vh;
-    background: paleturquoise;
-    padding: 0 200px;
-  }
-  .left {
-    height: 100vh;
-    width: 200px;
-    float: left;
-    margin-left: -100%;
-    background: palevioletred;
-  }
-  .right {
-    height: 100vh;
-    float: left;
-    margin-left: -200px;
-    width: 200px;
-    background: gray;
-  }
-</style>
 <body>
   <div>
     <div class="main">

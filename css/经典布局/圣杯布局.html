@@ -5,40 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .middle {
+      height: 100vh;
+      width: 100%;
+      background: paleturquoise;
+      float: left;
+    }
+    .left {
+      height: 100vh;
+      width: 200px;
+      background: palevioletred;
+      float: left;
+      margin-left: -100%;
+      position: relative;
+      left: -200px;
+    }
+    .right {
+      height: 100vh;
+      width: 200px;
+      background: purple;
+      float: left;
+      margin-left: -200px;
+      position: relative;
+      left: 200px;
+    }
+    .container {
+      padding: 0 200px;
+    }
+  </style>
 </head>
-<style>
-  * {
-    padding: 0;
-    margin: 0;
-  }
-  .middle {
-    height: 100vh;
-    width: 100%;
-    background: paleturquoise;
-    float: left;
-  }
-  .left {
-    height: 100vh;
-    width: 200px;
-    background: palevioletred;
-    float: left;
-    margin-left: -100%;
-    position: relative;
-    left: -200px;
-  }
-  .right {
-    height: 100vh;
-    width: 200px;
-    background: purple;
-    float: left;
-    margin-left: -200px;
-    position: relative;
-    left: 200px;
-  }
-  .container {
-    padding: 0 200px;
-  }
-</style>
 <body>
   <div class="container">
     <div class="middle">
