@@ -60,8 +60,26 @@
   ```
 ### 改变this指向
   - bind： bind方法创建一个新的函数，当被调用时，将其this关键字设置为配置的值。多用在事件绑定中，如react事件中绑定this。
-  - call： fn.call(obj, args)
-  - apply： fn.apply(obj, [args])
+  - call： fn.call(obj, arg1, arg2)
+  - apply： fn.apply(obj, [arg1, arg2])
   - 箭头函数
   - const that = this
   - 构造函数
+
+  `
+  bind 是返回对应函数，便于稍后调用；apply 、call 则是立即调用 
+  `
+### apply其他用法
+  - 用apply将数组添加到另一个数组
+    ```
+    const array = [1, 2, 3]
+    const elements = ['a', 'b', 'c']
+    array.push.apply(array, elements)
+    console.info(array) // [1,2,3,'a','b','c']
+    ```
+  - 获取数组中的最大值 最小值
+    ```
+    const  numbers = [5, 458 , 120 , -215 ]
+    const manInNumbers = Math.max.apply(Math, numbers),
+          minInNumbers = Math.min.apply(Math, numbers)
+    ```
