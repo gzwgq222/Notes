@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    min-width: 500px;
+  }
+  .main {
+    width: 100%;
+    float: left;
+  }
+  .main::after {
+    display: block;
+    content: '';
+    font-size: 0;
+    height: 0;
+    clear: both;
+    zoom: 1;
+  }
+  .main-div {
+    height: 100vh;
+    background: paleturquoise;
+    padding: 0 200px;
+  }
+  .left {
+    height: 100vh;
+    width: 200px;
+    float: left;
+    margin-left: -100%;
+    background: palevioletred;
+  }
+  .right {
+    height: 100vh;
+    float: left;
+    margin-left: -200px;
+    width: 200px;
+    background: gray;
+  }
+</style>
+<body>
+  <div>
+    <div class="main">
+      <div class="main-div">
+        双飞翼布局
+        1测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测
+        2测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+        测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+      </div>
+    </div>
+    <div class="left">双飞翼布局的前两步和圣杯布局一样，只是处理中间栏部分内容被遮挡问题的解决方案有所不同</div>
+    <div class="right">圣杯布局是父元素设置padding，双飞翼布局是在中间元素的子元素设置padding</div>
+  </div>
+</body>
+</html>
