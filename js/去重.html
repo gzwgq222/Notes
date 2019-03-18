@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+  const arr = [1, 1, 2, 4, 66, 66, 1, 8, 'as', 'bb', 'as']
+  // 循环实现思路，外层循环去重数组，循环体内判断 item 是否在 newArr 内，不在则 push 进去
+  // 双重循环
+  const unique1 = arr => {
+    let newArray = []
+    let i = 0,
+        isRepeat = false,
+        len = arr.length
+    for (i; i < len; i++) {
+      isRepeat = false
+      let j = 0,
+          newLen = newArray.length
+      for (j; j < newLen; j ++) {
+        if (arr[i] === newArray[j]) {
+          isRepeat = true
+          break
+        }
+      }
+      !isRepeat && newArray.push(arr[i])
+    }
+    return newArray
+  }
+  console.log('双重循环: ', unique1(arr))
+  // 循环 + includes
+  const unique2 = arr => {
+    let newArr = []
+    arr.forEach(item => {
+      !newArr.includes(item) && newArr.push(item)
+    })
+    return newArr
+  }
+  console.log('循环 + includes: ', unique2(arr))
+  // filter + indexOf
+  const unique3 = arr => {
+    return arr.filter((item, index) => {
+      return arr.indexOf(item) === index
+    })
+  }
+  console.info('filter + indexOf: ', unique3(arr))
+  // sort, 先排序，判断相邻两个 item 是否相等，不相等则 push 进去
+  const sort1 = arr => {
+    let newArr = []
+    arr.sort()
+    arr.forEach((item, i) => {
+      item !== arr[i+1] && newArr.push(item)
+    })
+    return newArr
+  }
+  console.log('sort1: ', sort1(arr))
+  // 先 sort，然后判断 newArr 最后的item，是否等于当前循环的 item，不等于则 push 进去
+  const sort2 = arr => {
+    const newArray = []
+    arr.sort()
+    arr.forEach((item, i) => {
+      newArray[newArray.length - 1] !== item && newArray.push(item)
+    })  
+    return newArray
+  }
+console.log('sort2: ', sort2(arr))
+// reduce
+const reduce = arr => {
+  return arr.reduce((pre, cur) => {
+    !pre.includes(cur) && pre.push(cur)
+    return pre
+  }, [])
+}
+console.log('reduce: ', reduce(arr))
+// set
+const set1 = arr => [...new Set(arr)]
+
+const set2 = arr => Array.from(new Set(arr))
+console.log('set ...: ', set1(arr))
+console.log('set Array.from: ', set2(arr))
+</script>
+</html>
