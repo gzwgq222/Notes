@@ -1,6 +1,6 @@
 ## 布局
 ### 三列布局
-  - float 实现
+  - 左右中
     `
     推荐第一个
     `
@@ -29,4 +29,35 @@
       <div class="right">right</div>
     </div>
     <!-- 前两步和圣杯布局一样，圣杯布局第三步是通过设置父元素 padding，移动 left，right 的位置实现，双飞翼布局通过给中间部分添加个子元素，设置子元素（center-main）的 padding 实现 -->
+    ```
+  - 上中下三行，头部200px高，底部200px高，中间自适应占满
+    ```
+    <div class="main">  
+      <div class="top"></div>  
+      <div class="center"></div>  
+      <div class="bottom"></div>  
+    </div>  
+    ```
+    ```
+    .main{  
+      width: 100%;  
+    }  
+    .top{  
+      width: 100%;  
+      height: 200px;  
+      position: absolute;  
+      top: 0;  
+    }  
+    .center{  
+      width: 100%;  
+      position: absolute;  
+      top: 200px;  
+      bottom: 200px;  
+    }  
+    .bottom{  
+      width: 100%;  
+      height: 200px;  
+      position: absolute;  
+      bottom: 0;  
+    }  
     ```
