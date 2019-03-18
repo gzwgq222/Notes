@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>双飞翼布局</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .wrap {
+      min-width: 600px;
+    }
+    .middle {
+      float: left;
+      background: pink;
+    }
+    .middle-main {
+      padding: 0 200px;
+    }
+    .left {
+      float: left;
+      margin-left: -100%;
+      width: 200px;
+      background: green;
+    }
+    .right {
+      float: left;
+      margin-left: -200px;
+      width: 200px;
+      background: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="middle">
+      <div class="middle-main">
+        双飞翼布局
+        <p>1测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测
+          2测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+          测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>
+      </div>
+    </div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+  </div>
+</body>
+</html>
