@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+  function deepCopy(obj) {
+    let copy = Array.isArray(obj) ? [] : {}
+    for (var i in obj) {
+      if (typeof obj[i] === 'object') {
+        if (obj[i] === null) {
+          copy[i] = null;                        
+        } else {
+          copy[i] = deepCopy(obj[i])
+        }
+　　　} else {
+  　　　　copy[i] = obj[i];
+　　  }
+    }
+    return copy
+  }
+  let arr = [11, 22, [33, 44]]
+  var obj = {
+    arr: [1, 2, [3, 4]],
+    NaN: NaN,
+    o: 0,
+    nego: -0,
+    un: undefined,
+    Infinity: Infinity,
+    Null: null,  
+    fn: function(name,fn){
+      this.name = name;
+      this.fn = function(){
+          alert('hello');
+      }
+    }
+  }
+  let objCopy = deepCopy(obj)
+  let arrCopy = deepCopy(arr)
+
+  obj.arr[0] = 666
+  arr[2][1] = 00
+
+  console.log(obj)
+  console.log(objCopy)
+
+  console.log(arr)
+  console.log(arrCopy)
+</script>
+</html>
