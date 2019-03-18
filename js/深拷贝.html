@@ -8,18 +8,14 @@
     
 </body>
 <script>
-  function deepCopy(obj) {
+  const deepCopy = (obj) => {
     let copy = Array.isArray(obj) ? [] : {}
-    for (var i in obj) {
+    for (let i in obj) {
       if (typeof obj[i] === 'object') {
-        if (obj[i] === null) {
-          copy[i] = null;                        
-        } else {
-          copy[i] = deepCopy(obj[i])
-        }
-　　　} else {
-  　　　　copy[i] = obj[i];
-　　  }
+        copy[i] = obj[i] === null ? null : deepCopy(obj[i])
+      } else {
+        copy[i] = obj[i]
+      }
     }
     return copy
   }
