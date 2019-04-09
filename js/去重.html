@@ -82,5 +82,25 @@ const set1 = arr => [...new Set(arr)]
 const set2 = arr => Array.from(new Set(arr))
 console.log('set ...: ', set1(arr))
 console.log('set Array.from: ', set2(arr))
+
+  // 简写版本 foreach + includes
+  const fn = arr => {
+    let newArr = []
+    arr.forEach(item =>  !newArr.includes(item) && newArr.push(item))
+    return newArr
+  }
+  // 简写版本 filter + indexof
+  const fn1 = arr => {
+    return arr.filter((item, index) => arr.indexOf(item) === index)
+  }
+  // reduce
+  const f3 = arr => {
+    return arr.reduce((pre, cur) => {
+      !pre.includes(cur) && pre.push(cur)
+      return pre
+    }, [])
+  }
+  //  set
+  const f4 = arr => [...new Set(arr)]
 </script>
 </html>
