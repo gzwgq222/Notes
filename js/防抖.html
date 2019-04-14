@@ -32,7 +32,7 @@
       return function() {
         clearTimeout(timer)
         timer = setTimeout(() => {
-          fn.call(this, arguments)
+          fn.apply(this, arguments)
         }, time)
       };
     }
